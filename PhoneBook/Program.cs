@@ -250,7 +250,7 @@ namespace PhoneBook
                 {
                     int i = 0;
                     List<Person> SortedByName = contacts.OrderBy(o => o.name).ToList();
-                    using (StreamWriter writer = new StreamWriter("C:\\Users\\User\\Desktop\\kbtu2\\.Net\\project\\ConsoleApplication1\\TextFile.txt", true))
+                    using (StreamWriter writer = new StreamWriter("C:\\Users\\User\\Desktop\\kbtu2\\.Net\\project Phone Book\\PhoneBook\\Contacts.txt", true))
                     {
                         foreach (Person p in SortedByName)
                         {
