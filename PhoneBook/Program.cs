@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -8,6 +9,7 @@ using System.Text.RegularExpressions;
 
 namespace PhoneBook
 {
+
     class Program
     {
         public static List<Person> contacts = new List<Person>();
@@ -241,40 +243,84 @@ namespace PhoneBook
 
         private static void viewAll()
         {
-            Console.WriteLine("How do you want to sort? \n1: by name \n2: by email");
+            Console.WriteLine("How do you want to sort?" +
+                                "\n1: by name \n2: by email \n3: by surname" +
+                                "\n4: by mobile phone \n5: by home number");
         linkSort:
             try
             {
                 int choice = int.Parse(Console.ReadLine());
-                if (choice == 1)
+
+                switch (choice)
                 {
-                    int i = 0;
-                    List<Person> SortedByName = contacts.OrderBy(o => o.name).ToList();
-                    using (StreamWriter writer = new StreamWriter("C:\\Users\\User\\Desktop\\kbtu2\\.Net\\project Phone Book\\PhoneBook\\Contacts.txt", true))
-                    {
-                        foreach (Person p in SortedByName)
+                    case 1:
+                        int i = 0;
+                        List<Person> SortedByName = contacts.OrderBy(o => o.name).ToList();
+                        using (StreamWriter writer = new StreamWriter("C:\\Users\\User\\Desktop\\kbtu2\\.Net\\project Phone Book\\PhoneBook\\Contacts.txt", true))
+                        {
+                            foreach (Person p in SortedByName)
+                            {
+                                i++;
+                                Console.WriteLine("Contact #{0}: \nName: {1} \nSurname: {2}\nMobile phone: {3}\nHome phone: {4}\nEmail: {5}\nAddress: {6}\n", i, p.name, p.surname, p.mobilePhone, p.homePhone, p.email, p.address);
+                                writer.WriteLine("Contact: \nName: {0} \nSurname: {1}\nMobile phone: {2}\nHome phone: {3}\nEmail: {4}\nAddress: {5}\n", p.name, p.surname, p.mobilePhone, p.homePhone, p.email, p.address);
+                            }
+                        }
+                        break;
+                    case 2:
+                        i = 0;
+                        List<Person> SortedByMail = contacts.OrderBy(o => o.email).ToList();
+                        foreach (Person p in SortedByMail)
                         {
                             i++;
-                            Console.WriteLine("Contact #{0}: \nName: {1} \nSurname: {2}\nMobile phone: {3}\nHome phone: {4}\nEmail: {5}\nAddress: {6}\n", i, p.name, p.surname, p.mobilePhone, p.homePhone, p.email, p.address);
-                            writer.WriteLine("Contact: \nName: {0} \nSurname: {1}\nMobile phone: {2}\nHome phone: {3}\nEmail: {4}\nAddress: {5}\n", p.name, p.surname, p.mobilePhone, p.homePhone, p.email, p.address);
+                            Console.WriteLine("\nContact #{0}: \nName: {1} \nSurname: {2}\nMobile phone: {3}\nHome phone: {4}\nEmail: {5}\nAddress: {6}\n", i, p.name, p.surname, p.mobilePhone, p.homePhone, p.email, p.address);
                         }
-                    }
+                        break;
+
+                    case 3:
+                        ContactSort pc = new ContactSort();
+                        pc.ComparisonMethod = ContactSort.ComparisonType.surname;
+                        contacts.Sort(pc);
+                        i = 0;
+                        foreach (Person p in contacts)
+                        {
+                            i++;
+                            Console.WriteLine("\nContact #{0}: \nName: {1} \nSurname: {2}\nMobile phone: {3}\nHome phone: {4}\nEmail: {5}\nAddress: {6}\n", i, p.name, p.surname, p.mobilePhone, p.homePhone, p.email, p.address);
+                        }
+                        break;
+
+                    case 4:
+                        ContactSort phone = new ContactSort();
+                        phone.ComparisonMethod = ContactSort.ComparisonType.mobile;
+
+                        i = 0;
+                        foreach (Person p in contacts)
+                        {
+                            i++;
+                            Console.WriteLine("\nContact #{0}: \nName: {1} \nSurname: {2}\nMobile phone: {3}\nHome phone: {4}\nEmail: {5}\nAddress: {6}\n", i, p.name, p.surname, p.mobilePhone, p.homePhone, p.email, p.address);
+                        }
+                        break;
+
+                    case 5:
+                        ContactSort home = new ContactSort();
+                        home.ComparisonMethod = ContactSort.ComparisonType.home;
+
+                        i = 0;
+                        foreach (Person p in contacts)
+                        {
+                            i++;
+                            Console.WriteLine("\nContact #{0}: \nName: {1} \nSurname: {2}\nMobile phone: {3}\nHome phone: {4}\nEmail: {5}\nAddress: {6}\n", i, p.name, p.surname, p.mobilePhone, p.homePhone, p.email, p.address);
+                        }
+                        break;
+
+                    default:
+                        break;
                 }
-                if (choice == 2)
-                {
-                    int i = 0;
-                    List<Person> SortedByMail = contacts.OrderBy(o => o.email).ToList();
-                    foreach (Person p in SortedByMail)
-                    {
-                        i++;
-                        Console.WriteLine("\nContact #{0}: \nName: {1} \nSurname: {2}\nMobile phone: {3}\nHome phone: {4}\nEmail: {5}\nAddress: {6}\n", i, p.name, p.surname, p.mobilePhone, p.homePhone, p.email, p.address);
-                    }
-                }
+
             }
             catch (FormatException fe)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("You have two choices [1] and [2]");
+                Console.WriteLine("You have to choose a number [1,2,3,4,5]");
                 Console.ResetColor();
                 goto linkSort;
             }
@@ -282,7 +328,7 @@ namespace PhoneBook
 
         private static void displayMenu()
         {
-            Console.WriteLine("Choose Option");
+            Console.WriteLine("\nChoose Option");
             Console.WriteLine("[0] View the list");
             Console.WriteLine("[1] Create contact");
             Console.WriteLine("[2] Delete contact");
@@ -290,5 +336,7 @@ namespace PhoneBook
             Console.WriteLine("[4] Update contact");
             Console.WriteLine("[5] Exit\n");
         }
+
+
     }
 }

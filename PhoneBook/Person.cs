@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PhoneBook
 {
-    class Person
+    class Person : IComparable<Person>
     {
         public string name;
         public string surname;
@@ -27,6 +27,10 @@ namespace PhoneBook
         }
         public Person() { }
 
-    }
+        public int CompareTo(Person p)
+        {
+            return this.surname.CompareTo(p.surname);
+        }
+   }
 
 }
