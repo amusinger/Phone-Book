@@ -39,3 +39,43 @@ Home phone:
 Email: ai@mail.kz
 Address: 
 
+Contact: 
+Name: Aizhan 
+Surname: Ye
+Mobile phone: 7051290805
+Home phone: 
+Email: Aij@mail.eu
+Address: 
+
+Contact: 
+Name: Aizzz 
+Surname: zzz
+Mobile phone: 7051290805
+Home phone: 
+Email: aij@nauk.ri
+Address: 
+
+Contact: 
+Name: Ai 
+Surname: za
+Mobile phone: 8051584648
+Home phone: 444
+Email: aaa@aj.ru
+Address: 
+
+Contact: 
+Name: Aizhan 
+Surname: Ye
+Mobile phone: 7051290805
+Home phone: 555555
+Email: aijnenok@mail.ru
+Address: 
+
+Contact: 
+Name: Aizhan 
+Surname: ye
+Mobile phone: +77711646299
+Home phone: 
+Email: aijanenok@mail.ru
+Address: 
+

@@ -14,11 +14,11 @@ namespace PhoneBook
             mobile = 4,
             home = 5
         }
-        public ComparisonType _comparisonType;
+        public ComparisonType comparisonProperty;
         public ComparisonType ComparisonMethod
         {
-            get { return _comparisonType; }
-            set { _comparisonType = value; }
+            get { return comparisonProperty; }
+            set { comparisonProperty = value; }
         }
 
         public int Compare(Person x, Person y)

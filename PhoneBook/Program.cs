@@ -261,8 +261,8 @@ namespace PhoneBook
                             foreach (Person p in SortedByName)
                             {
                                 i++;
-                                Console.WriteLine("Contact #{0}: \nName: {1} \nSurname: {2}\nMobile phone: {3}\nHome phone: {4}\nEmail: {5}\nAddress: {6}\n", i, p.name, p.surname, p.mobilePhone, p.homePhone, p.email, p.address);
-                                writer.WriteLine("Contact: \nName: {0} \nSurname: {1}\nMobile phone: {2}\nHome phone: {3}\nEmail: {4}\nAddress: {5}\n", p.name, p.surname, p.mobilePhone, p.homePhone, p.email, p.address);
+                                Console.WriteLine("Contact #{0}: \nName: {1} \nSurname: {2}\nMobile phone: +7{3}\nHome phone: {4}\nEmail: {5}\nAddress: {6}\n", i, p.name, p.surname, p.mobilePhone, p.homePhone, p.email, p.address);
+                                writer.WriteLine("Contact: \nName: {0} \nSurname: {1}\nMobile phone: +7{2}\nHome phone: {3}\nEmail: {4}\nAddress: {5}\n", p.name, p.surname, p.mobilePhone, p.homePhone, p.email, p.address);
                             }
                         }
                         break;
@@ -272,7 +272,7 @@ namespace PhoneBook
                         foreach (Person p in SortedByMail)
                         {
                             i++;
-                            Console.WriteLine("\nContact #{0}: \nName: {1} \nSurname: {2}\nMobile phone: {3}\nHome phone: {4}\nEmail: {5}\nAddress: {6}\n", i, p.name, p.surname, p.mobilePhone, p.homePhone, p.email, p.address);
+                            Console.WriteLine("\nContact #{0}: \nName: {1} \nSurname: {2}\nMobile phone: +7{3}\nHome phone: {4}\nEmail: {5}\nAddress: {6}\n", i, p.name, p.surname, p.mobilePhone, p.homePhone, p.email, p.address);
                         }
                         break;
 
@@ -284,7 +284,7 @@ namespace PhoneBook
                         foreach (Person p in contacts)
                         {
                             i++;
-                            Console.WriteLine("\nContact #{0}: \nName: {1} \nSurname: {2}\nMobile phone: {3}\nHome phone: {4}\nEmail: {5}\nAddress: {6}\n", i, p.name, p.surname, p.mobilePhone, p.homePhone, p.email, p.address);
+                            Console.WriteLine("\nContact #{0}: \nName: {1} \nSurname: {2}\nMobile phone: +7{3}\nHome phone: {4}\nEmail: {5}\nAddress: {6}\n", i, p.name, p.surname, p.mobilePhone, p.homePhone, p.email, p.address);
                         }
                         break;
 
@@ -296,7 +296,7 @@ namespace PhoneBook
                         foreach (Person p in contacts)
                         {
                             i++;
-                            Console.WriteLine("\nContact #{0}: \nName: {1} \nSurname: {2}\nMobile phone: {3}\nHome phone: {4}\nEmail: {5}\nAddress: {6}\n", i, p.name, p.surname, p.mobilePhone, p.homePhone, p.email, p.address);
+                            Console.WriteLine("\nContact #{0}: \nName: {1} \nSurname: {2}\nMobile phone: +7{3}\nHome phone: {4}\nEmail: {5}\nAddress: {6}\n", i, p.name, p.surname, p.mobilePhone, p.homePhone, p.email, p.address);
                         }
                         break;
 
@@ -308,7 +308,7 @@ namespace PhoneBook
                         foreach (Person p in contacts)
                         {
                             i++;
-                            Console.WriteLine("\nContact #{0}: \nName: {1} \nSurname: {2}\nMobile phone: {3}\nHome phone: {4}\nEmail: {5}\nAddress: {6}\n", i, p.name, p.surname, p.mobilePhone, p.homePhone, p.email, p.address);
+                            Console.WriteLine("\nContact #{0}: \nName: {1} \nSurname: {2}\nMobile phone: +7{3}\nHome phone: {4}\nEmail: {5}\nAddress: {6}\n", i, p.name, p.surname, p.mobilePhone, p.homePhone, p.email, p.address);
                         }
                         break;
 
